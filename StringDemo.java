@@ -94,38 +94,58 @@ public class StringDemo {
 
         // ! program 5
         // anagram
-        String s = "racee";
-        String s1 = "caree";
-        if (isanagram(s, s1)) {
-            System.out.println("anagram");
-        } else {
-            System.out.println("not anagram");
-        }
+        // String s = "racee";
+        // String s1 = "caree";
+        // if (isanagram(s, s1)) {
+        // System.out.println("anagram");
+        // } else {
+        // System.out.println("not anagram");
+        // }
 
-    }
-
-    public static boolean isanagram(String s1, String s2) {
-        int count[] = new int[256];
-        int count1[] = new int[256];
-        char c[]=s1.toCharArray();//['c','a','r','e']
-        char c1[]=s2.toCharArray();
-        if(c.length!=c1.length)
-        return false;
-        for(int i=0;i<c.length && i<c1.length;i++)
-        {
-            count[c[i]]++;
-            count1[c1[i]]++;
-        }
-        for(int i=0;i<256;i++)
-        {
-            if(count[i]!=count1[i])
-            {
-                return  false;
+        String s = "race";
+        String s1 = "cate";
+        if (s.length() == s1.length()) {
+            for (int i = 0; i < s.length(); i++) {
+                char c = s.charAt(i);
+                int index = s1.indexOf(c);
+                if (index != -1) {
+                    s1=s1.substring(0,index)+s1.substring(index+1);
+                }
             }
+            if(s1.isEmpty())
+            {
+                System.out.println("anagram");
+            }
+            else{
+                System.out.println("Not an anagram");
+            }
+        } else {
+            System.out.println("Not a  anagram");
         }
-        return true;
 
     }
+
+    // public static boolean isanagram(String s1, String s2) {
+    // int count[] = new int[256];
+    // int count1[] = new int[256];
+    // char c[]=s1.toCharArray();//['c','a','r','e']
+    // char c1[]=s2.toCharArray();
+    // if(c.length!=c1.length)
+    // return false;
+    // for(int i=0;i<c.length && i<c1.length;i++)
+    // {
+    // count[c[i]]++;
+    // count1[c1[i]]++;
+    // }
+    // for(int i=0;i<256;i++)
+    // {
+    // if(count[i]!=count1[i])
+    // {
+    // return false;
+    // }
+    // }
+    // return true;
+    // }
     // public static void printReverse(String s,int start,int end)
     // {
     // String s1="";

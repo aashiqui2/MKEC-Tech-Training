@@ -45,28 +45,70 @@ public class StringDemo {
         // }
 
         // ! program 2
-        String s="sunday is funday";
-        int end=s.length()-1;
-        int start=0;
-        for(int i=s.length()-1;i>=0;i--){
-            if(s.charAt(i)==' ')
+        // String s="sunday is funday";
+        // int end=s.length()-1;
+        // int start=0;
+        // for(int i=s.length()-1;i>=0;i--){
+        //     if(s.charAt(i)==' ')
+        //     {
+        //         start=i+1;
+        //         printReverse(s, start, end);//10,15
+        //         end=i-1;
+        //     }
+        // }
+        // printReverse(s, 0, end);
+
+        //! program 3
+        String s="Today is holiday";
+        String s1="is";
+        boolean isfound=false;
+        for(int i=0;i<s.length();i++)
+        {
+            if(s.charAt(i)==s1.charAt(0))
             {
-                start=i+1;
-                printReverse(s, start, end);//10,15
-                end=i-1;
+                int count=0;
+                for(int j=0;j<s1.length();j++)
+                {
+                    if(s.charAt(i)==s1.charAt(j))
+                    {
+                        count++;
+                        i++;
+                    }
+                }
+                if(count==s1.length())
+                {
+                    isfound=true;
+                    System.out.println("YES");
+                    break;
+                }
             }
         }
-        printReverse(s, 0, end);
+        if(isfound==false)
+        {
+            System.out.println("NO");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
-    public static void printReverse(String s,int start,int end)
-    {
-        String s1="";
-        for(int i=start;i<=end;i++)
-        {
-            s1+=s.charAt(i);
-        }
-        s1+=" ";
-        System.out.print(s1);
-    }
+    // public static void printReverse(String s,int start,int end)
+    // {
+    //     String s1="";
+    //     for(int i=start;i<=end;i++)
+    //     {
+    //         s1+=s.charAt(i);
+    //     }
+    //     s1+=" ";
+    //     System.out.print(s1);
+    // }
 }

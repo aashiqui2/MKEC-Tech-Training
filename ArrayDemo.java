@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Demo {
+public class ArrayDemo {
   public static void main(String[] args) {
     // ! program 1
     // int[] arr1 = { 1, 2, 3 };

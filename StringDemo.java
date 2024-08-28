@@ -29,19 +29,19 @@ public class StringDemo {
         // System.out.println(b.isEmpty());
         // ! Return true is length is 0
         // ! Program 1
-        // String s = "       Hardwork never fails         ";
+        // String s = " Hardwork never fails ";
         // System.out.println(s);
         // int i = 0, j = s.length() - 1;
         // for (int m = 0; m <s.length(); m++) {
-        //     if (s.charAt(i) == ' ') {
-        //         i++;
-        //     }
-        //     if (s.charAt(j) == ' ') {
-        //         j--;
-        //     }
+        // if (s.charAt(i) == ' ') {
+        // i++;
+        // }
+        // if (s.charAt(j) == ' ') {
+        // j--;
+        // }
         // }
         // for (int k = i; k <= j; k++) {
-        //     System.out.print(s.charAt(k));
+        // System.out.print(s.charAt(k));
         // }
 
         // ! program 2
@@ -49,66 +49,91 @@ public class StringDemo {
         // int end=s.length()-1;
         // int start=0;
         // for(int i=s.length()-1;i>=0;i--){
-        //     if(s.charAt(i)==' ')
-        //     {
-        //         start=i+1;
-        //         printReverse(s, start, end);//10,15
-        //         end=i-1;
-        //     }
+        // if(s.charAt(i)==' ')
+        // {
+        // start=i+1;
+        // printReverse(s, start, end);//10,15
+        // end=i-1;
+        // }
         // }
         // printReverse(s, 0, end);
 
-        //! program 3
-        String s="Today is holiday";
-        String s1="is";
-        boolean isfound=false;
-        for(int i=0;i<s.length();i++)
+        // ! program 3
+        // String s="Today is holiday";
+        // String s1="is";
+        // boolean isfound=false;
+        // for(int i=0;i<s.length();i++)
+        // {
+        // if(s.charAt(i)==s1.charAt(0))
+        // {
+        // int count=0;
+        // for(int j=0;j<s1.length();j++)
+        // {
+        // if(s.charAt(i)==s1.charAt(j))
+        // {
+        // count++;
+        // i++;
+        // }
+        // }
+        // if(count==s1.length())
+        // {
+        // isfound=true;
+        // System.out.println("YES");
+        // break;
+        // }
+        // }
+        // }
+        // if(isfound==false)
+        // {
+        // System.out.println("NO");
+        // }
+
+        // ! program 4 HW
+        // ? Move the "x" to the end of String s
+        // String s="axbxcd";
+
+        // ! program 5
+        // anagram
+        String s = "racee";
+        String s1 = "caree";
+        if (isanagram(s, s1)) {
+            System.out.println("anagram");
+        } else {
+            System.out.println("not anagram");
+        }
+
+    }
+
+    public static boolean isanagram(String s1, String s2) {
+        int count[] = new int[256];
+        int count1[] = new int[256];
+        char c[]=s1.toCharArray();//['c','a','r','e']
+        char c1[]=s2.toCharArray();
+        if(c.length!=c1.length)
+        return false;
+        for(int i=0;i<c.length && i<c1.length;i++)
         {
-            if(s.charAt(i)==s1.charAt(0))
+            count[c[i]]++;
+            count1[c1[i]]++;
+        }
+        for(int i=0;i<256;i++)
+        {
+            if(count[i]!=count1[i])
             {
-                int count=0;
-                for(int j=0;j<s1.length();j++)
-                {
-                    if(s.charAt(i)==s1.charAt(j))
-                    {
-                        count++;
-                        i++;
-                    }
-                }
-                if(count==s1.length())
-                {
-                    isfound=true;
-                    System.out.println("YES");
-                    break;
-                }
+                return  false;
             }
         }
-        if(isfound==false)
-        {
-            System.out.println("NO");
-        }
-
-
-
-
-
-
-
-
-
-
-
-
+        return true;
 
     }
     // public static void printReverse(String s,int start,int end)
     // {
-    //     String s1="";
-    //     for(int i=start;i<=end;i++)
-    //     {
-    //         s1+=s.charAt(i);
-    //     }
-    //     s1+=" ";
-    //     System.out.print(s1);
+    // String s1="";
+    // for(int i=start;i<=end;i++)
+    // {
+    // s1+=s.charAt(i);
+    // }
+    // s1+=" ";
+    // System.out.print(s1);
     // }
 }

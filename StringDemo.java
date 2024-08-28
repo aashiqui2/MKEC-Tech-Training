@@ -102,25 +102,49 @@ public class StringDemo {
         // System.out.println("not anagram");
         // }
 
-        String s = "race";
-        String s1 = "cate";
-        if (s.length() == s1.length()) {
-            for (int i = 0; i < s.length(); i++) {
-                char c = s.charAt(i);
-                int index = s1.indexOf(c);
-                if (index != -1) {
-                    s1=s1.substring(0,index)+s1.substring(index+1);
-                }
+        // String s = "race";
+        // String s1 = "cate";
+        // if (s.length() == s1.length()) {
+        // for (int i = 0; i < s.length(); i++) {
+        // char c = s.charAt(i);
+        // int index = s1.indexOf(c);
+        // if (index != -1) {
+        // s1=s1.substring(0,index)+s1.substring(index+1);
+        // }
+        // }
+        // if(s1.isEmpty())
+        // {
+        // System.out.println("anagram");
+        // }
+        // else{
+        // System.out.println("Not an anagram");
+        // }
+        // } else {
+        // System.out.println("Not a anagram");
+        // }
+
+        // ! Program 6
+        int nums[] = { 3, 1, 2, 4 };
+
+        int i = 0, j = nums.length - 1;
+        while (i < j) {
+            while (i < j && nums[i] % 2 == 0) {
+                i++;
             }
-            if(s1.isEmpty())
-            {
-                System.out.println("anagram");
+            while (i < j && nums[j] % 2 != 0) {
+                j--;
             }
-            else{
-                System.out.println("Not an anagram");
+            if (i < j) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+                i++;
+                j--;
             }
-        } else {
-            System.out.println("Not a  anagram");
+        }
+        for(int k:nums)
+        {
+            System.out.print(k+" ");
         }
 
     }

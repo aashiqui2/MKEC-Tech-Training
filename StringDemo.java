@@ -175,18 +175,24 @@ public class StringDemo {
         // ! Program 10
         // String s = "abc";
         // subsequence(s, 0, "");
+
+        // ! Program 11
+        
+
     }
+    
+    
 
     // public static void subsequence(String s, int i, String newString) {
-    //     if (i == s.length()) {
-    //         System.out.println(newString);
-    //         return;
-    //     }
-    //     char curreChar = s.charAt(i);// a
-        // to be
-    //     subsequence(s, i + 1, newString + curreChar);// abc
-        // not to be
-    //     subsequence(s, i + 1, newString);// ab
+    // if (i == s.length()) {
+    // System.out.println(newString);
+    // return;
+    // }
+    // char curreChar = s.charAt(i);// a
+    // to be
+    // subsequence(s, i + 1, newString + curreChar);// abc
+    // not to be
+    // subsequence(s, i + 1, newString);// ab
     // }
 
     // public static boolean isanagram(String s1, String s2) {
@@ -220,4 +226,5 @@ public class StringDemo {
     // s1+=" ";
     // System.out.print(s1);
     // }
+
 }

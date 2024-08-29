@@ -124,30 +124,70 @@ public class StringDemo {
         // }
 
         // ! Program 6
-        int nums[] = { 3, 1, 2, 4 };
+        // int nums[] = { 3, 1, 2, 4 };
+        // int i = 0, j = nums.length - 1;
+        // while (i < j) {
+        // while (i < j && nums[i] % 2 == 0) {
+        // i++;
+        // }
+        // while (i < j && nums[j] % 2 != 0) {
+        // j--;
+        // }
+        // if (i < j) {
+        // int temp = nums[i];
+        // nums[i] = nums[j];
+        // nums[j] = temp;
+        // i++;
+        // j--;
+        // }
+        // }
+        // for(int k:nums)
+        // {
+        // System.out.print(k+" ");
+        // }
 
-        int i = 0, j = nums.length - 1;
-        while (i < j) {
-            while (i < j && nums[i] % 2 == 0) {
-                i++;
-            }
-            while (i < j && nums[j] % 2 != 0) {
-                j--;
-            }
-            if (i < j) {
-                int temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
-                i++;
-                j--;
-            }
-        }
-        for(int k:nums)
-        {
-            System.out.print(k+" ");
-        }
+        // ! program 7 best time to buy and sell 212(HW)
 
+        // ! program 8 abc n=3 def (hw)
+
+        // ! program 9
+        // String input = "b3c6d15";
+        // StringBuilder output = new StringBuilder();
+        // int i = 0;
+        // while (i < input.length()) {
+        // char ch = input.charAt(i);//b
+
+        // if (Character.isLetter(ch)) {
+        // i++;
+        // int count = 0;
+
+        // while (i < input.length() && Character.isDigit(input.charAt(i))) {
+        // count = count * 10 + (input.charAt(i) - '0');
+        // i++;
+        // }
+        // for (int k = 0; k < count; k++) {
+        // output.append(ch);
+        // }
+        // }
+        // }
+        // System.out.println("Output: " + output.toString());
+
+        // ! Program 10
+        // String s = "abc";
+        // subsequence(s, 0, "");
     }
+
+    // public static void subsequence(String s, int i, String newString) {
+    //     if (i == s.length()) {
+    //         System.out.println(newString);
+    //         return;
+    //     }
+    //     char curreChar = s.charAt(i);// a
+        // to be
+    //     subsequence(s, i + 1, newString + curreChar);// abc
+        // not to be
+    //     subsequence(s, i + 1, newString);// ab
+    // }
 
     // public static boolean isanagram(String s1, String s2) {
     // int count[] = new int[256];

@@ -102,8 +102,7 @@ public class SingleLinkedListDemo {
                 prev = temp;
                 temp = temp.next;
             }
-            if(temp==null)
-            {
+            if (temp == null) {
                 System.out.println("Unable tp delete in the pos");
                 return;
             }
@@ -120,6 +119,29 @@ public class SingleLinkedListDemo {
         System.out.println("null");
     }
 
+    public int count() {
+        int count = 0;
+        Node temp = head;
+        while (temp != null) {
+            temp = temp.next;
+            count++;
+        }
+        return count;
+    }
+
+    public boolean search(int val) {
+        Node temp = head;
+        while (temp!= null) {
+            if (temp.data == val) {
+                return true;
+            } else {
+                temp = temp.next;
+            }
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         SingleLinkedListDemo ll = new SingleLinkedListDemo();
         ll.insertAtBegin(3);
@@ -130,6 +152,9 @@ public class SingleLinkedListDemo {
         ll.deleteAtBegin();
         ll.deleteAtEnd();
         ll.deleteAtPos(3);
+        System.out.println("No of nodes is " + ll.count());
+        System.out.println(ll.search(5));
         ll.display();
+
     }
 }

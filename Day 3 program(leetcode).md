@@ -6,8 +6,8 @@ Day 3 program:(leetcode)
 5) 238
 6) 13
 7) 14
-6) parking space
-
+8) 338
+9) parking space
 1<=N<=20
 • 1<=Arr[i]<=10000
 • A parking lot in a mall has RxC number of parking spaces. Each parking
@@ -32,3 +32,5 @@ input :
 [0 1 0 1 1 0 1 0 1 1 1 1] -> Elements of the array M[R][C]
 Output :
 4 -> Row 4 has maximum number of 1’s
+
+10) 206

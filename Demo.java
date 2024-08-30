@@ -21,18 +21,26 @@ public class Demo {
         // }
         // System.out.println(ans);
 
-        int n = 85273;
-        StringBuilder ans = new StringBuilder();
+        // int n = 85273;
+        // StringBuilder ans = new StringBuilder();
 
-        while (n > 0) {
-            int last = n & 1;
-            ans.insert(0, last); 
-            n = n >> 1; 
-        }
+        // while (n > 0) {
+        // int last = n & 1;
+        // ans.insert(0, last);
+        // n = n >> 1;
+        // }
 
-        System.out.println(ans.toString());
+        // System.out.println(ans.toString());
 
-        System.out.println(Integer.toBinaryString(85273));
+        // System.out.println(Integer.toBinaryString(85273));
 
+        // int a=1,b=1;
+        // while (b!=0) {
+        // int carry=a&b;
+
+        // a=a^b;
+        // b=carry<<1;
+        // }
+        // System.out.println(a);
     }
 }

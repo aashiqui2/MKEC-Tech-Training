@@ -38,6 +38,33 @@ public class SingleLinkedListDemo {
         }
     }
 
+    public void insertAtPos(int val, int pos) {
+        Node newnode=new Node(val);
+        if (pos == 0)
+        {
+            insertAtBegin(val);
+            return;
+        }
+        else if(head.next==null)
+        {
+            head.next=newnode;
+        }
+        else{
+            Node temp=head;
+            for(int i=0;i<pos-1;i++)
+            {
+                temp=temp.next;
+            }
+            if(temp==null)
+            {
+                System.out.println("invalid Position");
+                return;
+            }
+            newnode.next=temp.next;
+            temp.next=newnode;
+        }
+    }
+
     public void display() {
         Node temp = head;
         while (temp != null) {
@@ -53,6 +80,7 @@ public class SingleLinkedListDemo {
         ll.insertAtBegin(2);
         ll.insertAtBegin(1);
         ll.insertAtEnd(4);
+        ll.insertAtPos(5, 5);
         ll.display();
     }
 }

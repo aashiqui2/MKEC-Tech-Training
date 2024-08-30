@@ -8,7 +8,9 @@ public class SingleLinkedListDemo {
             next = null;
         }
     }
+
     Node head;
+
     SingleLinkedListDemo() {
         head = null;
     }
@@ -20,6 +22,19 @@ public class SingleLinkedListDemo {
         } else {
             newnode.next = head;
             head = newnode;
+        }
+    }
+
+    public void insertAtEnd(int val) {
+        Node newnode = new Node(val);
+        if (head == null) {
+            head = newnode;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newnode;
         }
     }
 
@@ -37,6 +52,7 @@ public class SingleLinkedListDemo {
         ll.insertAtBegin(3);
         ll.insertAtBegin(2);
         ll.insertAtBegin(1);
+        ll.insertAtEnd(4);
         ll.display();
     }
 }

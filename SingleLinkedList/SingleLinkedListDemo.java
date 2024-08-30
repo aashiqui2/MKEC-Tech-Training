@@ -141,6 +141,10 @@ public class SingleLinkedListDemo {
 
         return false;
     }
+    public void update(int val,int k)
+    {
+        
+    }
 
     public static void main(String[] args) {
         SingleLinkedListDemo ll = new SingleLinkedListDemo();
@@ -154,6 +158,7 @@ public class SingleLinkedListDemo {
         ll.deleteAtPos(3);
         System.out.println("No of nodes is " + ll.count());
         System.out.println(ll.search(5));
+        ll.update(4,5);
         ll.display();
 
     }

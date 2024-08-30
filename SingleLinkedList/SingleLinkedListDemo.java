@@ -44,6 +44,12 @@ public class SingleLinkedListDemo {
         {
             insertAtBegin(val);
             return;
+
+        }
+        if(head==null)
+        {
+            System.out.println("Unable to insert list is empty");
+            return;
         }
         else if(head.next==null)
         {
@@ -76,10 +82,10 @@ public class SingleLinkedListDemo {
 
     public static void main(String[] args) {
         SingleLinkedListDemo ll = new SingleLinkedListDemo();
-        ll.insertAtBegin(3);
-        ll.insertAtBegin(2);
-        ll.insertAtBegin(1);
-        ll.insertAtEnd(4);
+        // ll.insertAtBegin(3);
+        // ll.insertAtBegin(2);
+        // ll.insertAtBegin(1);
+        // ll.insertAtEnd(4);
         ll.insertAtPos(5, 5);
         ll.display();
     }

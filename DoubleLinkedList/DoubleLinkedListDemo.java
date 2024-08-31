@@ -110,14 +110,14 @@ public class DoubleLinkedListDemo {
                 temp = temp.next;
             }
             if (temp == null) {
-                System.out.println("Unable to insert list is empty");
+                System.out.println("Unable to delete At pos");
                 return;
             }
             if (temp.next != null) {
-                temp.prev.next = temp.next;
+                temp.next.prev = temp.prev;
             }
             if (temp.prev != null) {
-                temp.next.prev = temp.prev;
+                temp.prev.next = temp.next;
             } else {
                 head = head.next;
             }

@@ -43,7 +43,34 @@ public class DoubleLinkedListDemo {
             newnode.prev = temp;
         }
     }
-    
+
+    public void insertAtPos(int val, int pos) {
+        if (head == null) {
+            System.out.println("List is empty unable to insert");
+            return;
+        }
+        if (pos == 0) {
+            insertAtBegin(val);
+            return;
+        } else {
+            Node newnode = new Node(val);
+            Node temp=head;
+            for(int i=0;i<pos-1;i++)
+            {
+                temp=temp.next;
+            }
+            if (temp.next == null) {
+                temp.next = newnode;
+            } else {
+                newnode.next = temp.next;
+                temp.next.prev = newnode;
+                temp.next = newnode;
+                newnode.prev = temp;
+            }
+
+        }
+
+    }
 
     public void display() {
         if (head == null) {
@@ -88,6 +115,14 @@ public class DoubleLinkedListDemo {
                     System.out.println("Enter the value to insert");
                     val = sc.nextInt();
                     dl.insertAtEnd(val);
+                case 3:
+                    System.out.println("Enter the value to insert");
+                    val = sc.nextInt();
+                    System.out.println("Enter the position");
+                    int pos = sc.nextInt();
+                    dl.insertAtPos(val, pos);
+                    break;
+
                 case 4:
                     dl.display();
                     break;

@@ -54,10 +54,13 @@ public class DoubleLinkedListDemo {
             return;
         } else {
             Node newnode = new Node(val);
-            Node temp=head;
-            for(int i=0;i<pos-1;i++)
-            {
-                temp=temp.next;
+            Node temp = head;
+            for (int i = 0; i < pos - 1; i++) {
+                temp = temp.next;
+            }
+            if (temp == null) {
+                System.out.println("Unable to insert list is empty");
+                return;
             }
             if (temp.next == null) {
                 temp.next = newnode;
@@ -67,9 +70,58 @@ public class DoubleLinkedListDemo {
                 temp.next = newnode;
                 newnode.prev = temp;
             }
-
         }
+    }
 
+    public void deleteAtBegin() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        } else {
+            head = head.next;
+            head.prev = null;
+        }
+    }
+
+    public void deleteAtEnd() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        } else {
+            Node temp = head;
+            while (temp.next.next != null) {
+                temp = temp.next;
+            }
+            temp.next = null;
+        }
+    }
+
+    public void deleteAtPos(int pos) {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        if (pos == 0) {
+            deleteAtBegin();
+            return;
+        } else {
+            Node temp = head;
+            for (int i = 0; i < pos; i++) {
+                temp = temp.next;
+            }
+            if (temp == null) {
+                System.out.println("Unable to insert list is empty");
+                return;
+            }
+            if (temp.next != null) {
+                temp.prev.next = temp.next;
+            }
+            if (temp.prev != null) {
+                temp.next.prev = temp.prev;
+            } else {
+                head = head.next;
+            }
+        }
     }
 
     public void display() {
@@ -115,6 +167,7 @@ public class DoubleLinkedListDemo {
                     System.out.println("Enter the value to insert");
                     val = sc.nextInt();
                     dl.insertAtEnd(val);
+                    break;
                 case 3:
                     System.out.println("Enter the value to insert");
                     val = sc.nextInt();
@@ -125,6 +178,17 @@ public class DoubleLinkedListDemo {
 
                 case 4:
                     dl.display();
+                    break;
+                case 5:
+                    dl.deleteAtBegin();
+                    break;
+                case 6:
+                    dl.deleteAtEnd();
+                    break;
+                case 7:
+                    System.out.println("Enter the position");
+                    pos = sc.nextInt();
+                    dl.deleteAtPos(pos);
                     break;
                 case 10:
                     sc.close();

@@ -1,0 +1,103 @@
+import java.util.Scanner;;
+
+public class DoubleLinkedListDemo {
+    class Node {
+        Node prev;
+        int data;
+        Node next;
+
+        Node(int val) {
+            data = val;
+            prev = null;
+            next = null;
+        }
+    }
+
+    Node head;
+
+    DoubleLinkedListDemo() {
+        head = null;
+    }
+
+    public void insertAtBegin(int val) {
+        Node newnode = new Node(val);
+        if (head == null) {
+            head = newnode;
+        } else {
+            newnode.next = head;
+            head.prev = newnode;
+            head = newnode;
+        }
+    }
+
+    public void insertAtEnd(int val) {
+        Node newnode = new Node(val);
+        if (head == null) {
+            head = newnode;
+        } else {
+            Node temp = head;
+            while (temp.next != null) {
+                temp = temp.next;
+            }
+            temp.next = newnode;
+            newnode.prev = temp;
+        }
+    }
+    
+
+    public void display() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        } else {
+            Node temp = head;
+            while (temp != null) {
+                System.out.print(temp.data + "->");
+                temp = temp.next;
+            }
+        }
+        System.out.println("Null");
+    }
+
+    public static void main(String[] args) {
+        int val = 0, ch = 0;
+        Scanner sc = new Scanner(System.in);
+        DoubleLinkedListDemo dl = new DoubleLinkedListDemo();
+        while (true) {
+            System.out.println("\n--------Linked List Menu-----------");
+            System.out.println("1. Insert at Beginning");
+            System.out.println("2. Insert at End");
+            System.out.println("3. Insert at specified position");
+            System.out.println("4. Display the list");
+            System.out.println("5. Delete at Beginning");
+            System.out.println("6. Delete at End");
+            System.out.println("7. Delete from specified position");
+            System.out.println("8. Search the element");
+            System.out.println("9. Find the length");
+            System.out.println("10. Exit");
+            System.out.println("--------------------------------------");
+            System.out.print("Enter your choice: ");
+            ch = sc.nextInt();
+            switch (ch) {
+                case 1:
+                    System.out.println("Enter the value to insert");
+                    val = sc.nextInt();
+                    dl.insertAtBegin(val);
+                    break;
+                case 2:
+                    System.out.println("Enter the value to insert");
+                    val = sc.nextInt();
+                    dl.insertAtEnd(val);
+                case 4:
+                    dl.display();
+                    break;
+                case 10:
+                    sc.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Wrong choice");
+                    break;
+            }
+        }
+    }
+}

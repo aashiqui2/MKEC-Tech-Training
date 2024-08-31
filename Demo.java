@@ -21,7 +21,7 @@ public class Demo {
         // }
         // System.out.println(ans);
 
-        
+        // !program 2
         // int n = 85273;
         // StringBuilder ans = new StringBuilder();
         // while (n > 0) {
@@ -32,7 +32,7 @@ public class Demo {
         // System.out.println(ans.toString());
         // System.out.println(Integer.toBinaryString(85273));
 
-
+        // !program 3
         // int a=1,b=1;
         // while (b!=0) {
         // int carry=a&b;
@@ -41,5 +41,47 @@ public class Demo {
         // b=carry<<1;
         // }
         // System.out.println(a);
+
+        int n = 6;
+        int opt1 = 1;
+        int opt2 = 2;
+        System.out.println(addSub(n, opt1));
+        System.out.println(addSub(n, opt2));
+    }
+
+    public static int addSub(int n, int opt) {
+        int result = 0;
+        if (opt == 1) {
+
+                for (int i = n; i >= 1; i--) {
+                    if (i % 2 == 0) {
+                        result -= i;
+                    } else {
+                        result += i;
+                    }
+                }
+            result = Math.abs(result);
+        } else if (opt == 2) {
+            if (n % 2 == 0) {
+                for (int i = 1; i <= n; i++) {
+                    if (i % 2 == 0) {
+                        result -= i;
+                    } else {
+                        result += i;
+                    }
+                }
+                result = n - result;
+            } else {
+                for (int i = 1; i < n; i++) {
+                    if (i % 2 == 0) {
+                        result += i;
+                    } else {
+                        result -= i;
+                    }
+                }
+                result = n + result;
+            }
+        }
+        return result;
     }
 }

@@ -42,7 +42,7 @@ public class Demo {
         // }
         // System.out.println(a);
 
-        int n = 6;
+        int n = 5;
         int opt1 = 1;
         int opt2 = 2;
         System.out.println(addSub(n, opt1));

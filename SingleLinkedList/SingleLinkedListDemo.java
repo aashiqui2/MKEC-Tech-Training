@@ -1,9 +1,11 @@
-public class SingleLinkedListDemo {
+import java.util.Iterator;
+
+public class SingleLinkedListDemo<T> implements Iterable {
     class Node {
-        int data;
+        T data;
         Node next;
 
-        Node(int val) {
+        Node(T val) {
             data = val;
             next = null;
         }
@@ -15,7 +17,7 @@ public class SingleLinkedListDemo {
         head = null;
     }
 
-    public void insertAtBegin(int val) {
+    public void insertAtBegin(T val) {
         Node newnode = new Node(val);
         if (head == null) {
             head = newnode;
@@ -25,7 +27,7 @@ public class SingleLinkedListDemo {
         }
     }
 
-    public void insertAtEnd(int val) {
+    public void insertAtEnd(T val) {
         Node newnode = new Node(val);
         if (head == null) {
             head = newnode;
@@ -38,7 +40,7 @@ public class SingleLinkedListDemo {
         }
     }
 
-    public void insertAtPos(int val, int pos) {
+    public void insertAtPos(T val, int pos) {
         Node newnode = new Node(val);
         if (pos == 0) {
             insertAtBegin(val);
@@ -129,7 +131,7 @@ public class SingleLinkedListDemo {
         return count;
     }
 
-    public boolean search(int val) {
+    public boolean search(T val) {
         Node temp = head;
         while (temp != null) {
             if (temp.data == val) {
@@ -142,7 +144,7 @@ public class SingleLinkedListDemo {
         return false;
     }
 
-    public boolean update(int val, int k) {
+    public boolean update(T val, T k) {
         if (head == null) {
             System.out.println("List is empty unable to insert");
             return false;
@@ -162,23 +164,55 @@ public class SingleLinkedListDemo {
     }
 
     public static void main(String[] args) {
-        SingleLinkedListDemo ll = new SingleLinkedListDemo();
-        ll.insertAtBegin(3);
-        ll.insertAtBegin(2);
-        ll.insertAtBegin(1);
-        ll.insertAtEnd(4);
-        ll.insertAtPos(5, 4);
-        ll.deleteAtBegin();
-        ll.deleteAtEnd();
-        ll.deleteAtPos(3);
-        System.out.println("No of nodes is " + ll.count());
-        System.out.println(ll.search(5));
-        if (ll.update(4, 5)) {
-            System.out.println("Value is updated");
-        } else {
-            System.out.println("Value is Not in the list");
-        }
-        ll.display();
+        SingleLinkedListDemo<Double> ll = new SingleLinkedListDemo<>();
+        // ll.insertAtBegin(3);
+        // ll.insertAtBegin(2);
+        // ll.insertAtBegin(1);
+        // ll.insertAtEnd(4);
+        // ll.insertAtPos(5, 4);
 
+        // ? adding string
+        // ll.insertAtBegin("ccccc");
+        // ll.insertAtBegin("bbbbb");
+        // ll.insertAtBegin("aaaaa");
+
+        //? adding double
+        ll.insertAtBegin(2.4);
+        ll.insertAtBegin(3.4);
+        ll.insertAtBegin(4.4);
+
+        // ll.deleteAtBegin();
+        // ll.deleteAtEnd();
+        // ll.deleteAtPos(3);
+        // System.out.println("No of nodes is " + ll.count());
+        // System.out.println(ll.search("a"));
+        // if (ll.update("a", "b")) {
+        //     System.out.println("Value is updated");
+        // } else {
+        //     System.out.println("Value is Not in the list");
+        // }
+        // ll.display();
+        Iterator<Double> l2 = ll.iterator();
+        while (l2.hasNext()) {
+            System.out.print(l2.next()+"->");
+        }
+
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new Iterator<T>(){
+            Node temp=head;
+            public boolean hasNext()
+            {
+               return temp!=null;
+            }
+            public T next()
+            {
+              T val=temp.data;
+              temp=temp.next;
+              return val;
+            }
+        };
     }
 }

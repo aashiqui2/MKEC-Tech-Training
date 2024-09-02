@@ -6,11 +6,11 @@ public class DistinctColor {
         System.out.println("Enter the No of test case");
         int t = sc.nextInt();
         while (t-- > 0) {
-            System.err.println("Enter red");
+            System.out.println("Enter red");
             int red = sc.nextInt();
-            System.err.println("Enter green");
+            System.out.println("Enter green");
             int green = sc.nextInt();
-            System.err.println("Enter blue");
+            System.out.println("Enter blue");
             int blue = sc.nextInt();
             int distinctColor = 0;
 

@@ -58,6 +58,10 @@ public class QueueArray {
         }
         queue[pos]=val;
     }
+    public void sum()
+    {
+        
+    }
     public static void main(String[] args) {
         QueueArray q=new QueueArray(4);
         q.enqueue(1);

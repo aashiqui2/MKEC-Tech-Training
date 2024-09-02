@@ -52,7 +52,18 @@ public class QueueLinkedList {
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
+    }
+    public void update(int pos,int val)
+    {
 
+    }
+    public int count()
+    {
+
+    }
+    public void sum()
+    {
+        
     }
 
     public static void main(String[] args) {

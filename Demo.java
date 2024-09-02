@@ -21,7 +21,7 @@ public class Demo {
         // }
         // System.out.println(ans);
 
-        // !program 2
+        //! Program 2
         // int n = 85273;
         // StringBuilder ans = new StringBuilder();
         // while (n > 0) {
@@ -32,7 +32,7 @@ public class Demo {
         // System.out.println(ans.toString());
         // System.out.println(Integer.toBinaryString(85273));
 
-        // !program 3
+        //! Program 3
         // int a=1,b=1;
         // while (b!=0) {
         // int carry=a&b;
@@ -42,6 +42,7 @@ public class Demo {
         // }
         // System.out.println(a);
 
+        //! Program 4
         int n = 5;
         int opt1 = 1;
         int opt2 = 2;

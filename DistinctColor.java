@@ -16,7 +16,7 @@ public class DistinctColor {
 
             int minredgreen = Math.min(red, green);// yellow
             distinctColor += minredgreen;
-            red-=minredgreen;;
+            red-=minredgreen;
             green-=minredgreen;
 
             int minbluegreen = Math.min(blue, green);// cyan

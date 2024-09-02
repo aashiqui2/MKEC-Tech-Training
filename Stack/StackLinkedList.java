@@ -73,7 +73,7 @@ public class StackLinkedList {
             return;
         }
         Node temp=top;
-        for(int i=size()-pos-1;i>=0;i--){//i=
+        for(int i=size()-pos-1;i>0;i--){
             temp=temp.next;
         }
         if(temp==null)
@@ -94,6 +94,17 @@ public class StackLinkedList {
         }
         return count;
     }
+    public int  sum()
+    {
+        int sum=0;
+        Node temp=top;
+        while(temp!=null)
+        {
+            sum+=temp.data;
+            temp=temp.next;
+        }
+        return sum;
+    }
 
     public static void main(String[] args) {
         StackLinkedList sl = new StackLinkedList();
@@ -106,9 +117,10 @@ public class StackLinkedList {
         System.out.println();
         System.out.println("Toppest element is "+sl.peek());
         System.out.println("the popped element is "+sl.pop());
-        sl.update(0, 0);
         System.out.println("No of Nodes "+sl.size());
+        sl.update(3, 0);
         sl.display();
+        System.out.println("Sum of Nodes is "+sl.sum());
 
     }
 }
